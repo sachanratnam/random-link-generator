@@ -5,21 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Redirecting...</title>
     <script>
-      // Array of links
+      
       const links = [
         "https://superprofile.bio/bookings/aryancosmofeed",
         "https://superprofile.bio/bookings/Sakshi123",
         "https://superprofile.bio/bookings/babita8424",
       ];
 
-      // Function to redirect to a random link
+     
       function redirectToRandomLink() {
         const randomIndex = Math.floor(Math.random() * links.length);
         const randomLink = links[randomIndex];
-        window.location.href = randomLink; // Redirects to the selected link
+        window.location.href = randomLink; 
       }
 
-      // Call the function when the page loads
+      
       window.onload = redirectToRandomLink;
     </script>
   </head>
