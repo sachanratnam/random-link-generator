@@ -1,6 +1,7 @@
 const links = [
     "https://superprofile.bio/bookings/aryancosmofeed",
-    "https://superprofile.bio/bookings/Sakshi123"
+    "https://superprofile.bio/bookings/Sakshi123",
+    "https://superprofile.bio/bookings/babita8424"
 ];
 function getRandomLink() {
     const randomIndex = Math.floor(Math.random() * links.length);
