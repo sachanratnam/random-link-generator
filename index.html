@@ -3,18 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Book Your Strategy Call</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Redirecting...</title>
+    <script>
+      // Array of links
+      const links = [
+        "https://superprofile.bio/bookings/aryancosmofeed",
+        "https://superprofile.bio/bookings/Sakshi123"
+      ];
+
+      // Function to redirect to a random link
+      function redirectToRandomLink() {
+        const randomIndex = Math.floor(Math.random() * links.length);
+        const randomLink = links[randomIndex];
+        window.location.href = randomLink; // Redirects to the selected link
+      }
+
+      // Call the function when the page loads
+      window.onload = redirectToRandomLink;
+    </script>
   </head>
   <body>
-    <div class="container">
-      <h1>Book Your Free Strategy Call</h1>
-      <p>
-        Click the button below to get started. A link will be selected for your consultation.
-      </p>
-      <button id="randomLinkButton">Book Your Free Strategy Call</button>
-    </div>
-
-    <script src="script.js"></script>
+    <h1 style="text-align: center; margin-top: 50px;">
+      Redirecting you to your strategy call...
+    </h1>
+    <p style="text-align: center; color: #555;">
+      If you are not redirected automatically, please wait a few moments.
+    </p>
   </body>
 </html>
