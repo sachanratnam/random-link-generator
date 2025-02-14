@@ -14,15 +14,25 @@
       ];
 
       function redirectToRandomLink() {
-        let randomIndex = Math.floor(Math.random() * links.length);
-        let prev = randomIndex;
-        if (randomIndex == prev) {
-          randomIndex = Math.floor(Math.random() * links.length);
-          const randomLink = links[randomIndex];
-          window.location.href = randomLink;
+        let lastVisited = localStorage.getItem("lastVisited");
+
+        // Filter out the last visited link
+        let availableLinks = links.filter((link) => link !== lastVisited);
+
+        // If all links were visited, reset the history
+        if (availableLinks.length === 0) {
+          availableLinks = [...links];
         }
-        const randomLink = links[randomIndex];
-        window.location.href = randomLink;
+
+        // Select a random link from available links
+        let randomIndex = Math.floor(Math.random() * availableLinks.length);
+        let selectedLink = availableLinks[randomIndex];
+
+        // Store the current link as last visited
+        localStorage.setItem("lastVisited", selectedLink);
+
+        // Redirect to the selected link
+        window.location.href = selectedLink;
       }
 
       window.onload = redirectToRandomLink;
