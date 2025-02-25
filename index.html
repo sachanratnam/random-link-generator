@@ -5,23 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Redirecting...</title>
     <script>
-      
       const links = [
         "https://superprofile.bio/bookings/aryancosmofeed",
         "https://superprofile.bio/bookings/Sakshi123",
         "https://superprofile.bio/bookings/babita8424",
-        
-        
+        "https://superprofile.bio/bookings/priyadarshini29",
       ];
-//hello worldssjdhasjdhaskj
-     console.log("hello world!!!s")
+
       function redirectToRandomLink() {
-        const randomIndex = Math.floor(Math.random() * links.length);
-        const randomLink = links[randomIndex];
-        window.location.href = randomLink; 
+        let lastVisited = localStorage.getItem("lastVisited");
+
+        // Filter out the last visited link
+        let availableLinks = links.filter((link) => link !== lastVisited);
+
+        // If all links were visited, reset the history
+        if (availableLinks.length === 0) {
+          availableLinks = [...links];
+        }
+
+        // Select a random link from available links
+        let randomIndex = Math.floor(Math.random() * availableLinks.length);
+        let selectedLink = availableLinks[randomIndex];
+
+        // Store the current link as last visited
+        localStorage.setItem("lastVisited", selectedLink);
+
+        // Redirect to the selected link
+        window.location.href = selectedLink;
       }
 
-      
       window.onload = redirectToRandomLink;
     </script>
   </head>
